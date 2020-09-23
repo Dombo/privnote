@@ -59,14 +59,11 @@ func CreateNote(cmd *cobra.Command, expires string) {
 	}
 
 	var password, hasManualPass string
-	if cmd.Flags().Lookup("password").Changed {
+	if viper.GetBool("password") {
 		password, err = promptPassword()
 		if err != nil {
 			log.Panicf("failed to get user input for password %v", err)
 		}
-		hasManualPass = "true"
-	} else if viper.GetString("password") != "" {
-		password = viper.GetString("password")
 		hasManualPass = "true"
 	} else {
 		password = makePassword()
