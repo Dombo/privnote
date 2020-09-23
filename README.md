@@ -11,9 +11,11 @@ Privnote is a CLI utility written in go for creating secure self-destructing sec
 * Full compatibility with the privnote service
 * Should be reasonably cross platform? Untested outside of *nix so far
 
-## Installation
+## Installation (from source)
 
 ```bash
+git clone https://github.com/Dombo/privnote.git
+cd privnote
 go build -o privnote && mv privnote /usr/local/bin/privnote
 ```
 
